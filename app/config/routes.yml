@@ -1,0 +1,30 @@
+home:
+    path: /
+    defaults: 
+        _controller: 'Controllers\PageController::index'
+    methods:
+        - GET
+index:
+    path: /index
+    defaults: 
+        _controller: 'Controllers\PageController::index'
+    methods:
+        - GET              
+counter:
+    path: /counter/{url}
+    defaults: 
+        _controller: 'Controllers\URL::counter'
+    methods:
+        - POST      
+get_action:
+    path: /get/{action}
+    defaults: 
+        _controller: 'Controllers\Data::get'
+    methods:
+        - GET
+post_action:
+    path: /post/{action}
+    defaults: 
+        _controller: 'Controllers\Data::post'
+    methods:
+        - POST
