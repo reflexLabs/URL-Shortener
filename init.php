@@ -9,7 +9,6 @@ session_start();
 
 try {
     require_once __DIR__ . '/app/config/config.php';
-   
     $_db = Database::getInstance();
 
     Routes::process(Config::get('production'), $_db);
