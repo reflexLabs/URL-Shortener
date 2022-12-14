@@ -1,0 +1,114 @@
+:root {
+    --main-color: #479dd2;
+    --main-color-light: #f6be91;
+    --main-color-lighter: #f2f0e8;
+    
+	--main-bg-color: #fff;
+	--secondary-bg-dark-color: #303030;
+	--secondary-bg-color: #181818;
+
+	--warning-bg-color: #ff4f4f;
+	--success-bg-color: #78de54;
+
+    --font-color-white: #fff;
+	--font-color-light: #ececec;
+	--font-color-lighter: #dddddd;
+	--font-color-muted: #bcbcbc;
+	--font-color-dark: #a8a8a8;
+	--font-color-darker: #8d8d8d;
+	--font-color-darkest:rgb(50, 50, 50);
+    --font-color-primary: rgb(0, 0, 0);
+	--font-color-secondary: rgba(255, 255, 255, 0.7);
+
+	--transition-time: 0.25s;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body{
+	background: var(--secondary-bg-color);
+	color: var(--font-color-primary);
+	height: 100%;
+    width:100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-color-darker);
+}
+
+a:hover {
+    color: var(--main-color);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    outline: none !important;
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+	box-shadow: 0 0 0 30px white inset !important;
+}
+input:-webkit-autofill{
+    -webkit-text-fill-color: black !important;
+	color: black;
+}
+
+.fancy_input textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {   
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+    height: 40px;
+    color: var(--font-color-white);
+    background: var(--font-color-primary);
+    border: 0;
+    border-radius:8px;
+    margin: 1em 0;
+    transition: .2s;
+}
+
+input.fancy_input:focus{
+    background: var(--font-color-darkest) !important;
+    color: var(--font-color-muted);
+}
+
+.fancy_button{
+    border-radius: 8px;
+    transition: .05s;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.fancy_button:hover{
+    background: var(--font-color-darkest);
+}
+
+.title{
+    color: var(--main-color);
+}
+
+.main_container {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

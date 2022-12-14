@@ -13,17 +13,17 @@ class Config {
     public static function writeable(): bool {
         clearstatcache();
         if (self::exists()) {
-            return is_writable('app/config/config');
+            return is_writable('../app/config/config');
         }
 
-        return is_writable('app');
+        return is_writable('/app');
     }
 
     /**
      * @return bool Whether config file exists
      */
     public static function exists(): bool {
-        return file_exists('app/config/config.php');
+        return file_exists('../app/config/config.php');
     }
 
     /**
@@ -40,7 +40,7 @@ class Config {
             throw new \RuntimeException('Config file does not exist');
         }
 
-        return self::$_config_cache = require('app/config/config.php');
+        return self::$_config_cache = require('../app/config/config.php');
     }
 
     /**
@@ -50,11 +50,11 @@ class Config {
      */
     public static function write(array $config): void {
         $contents = '<?php' . PHP_EOL . PHP_EOL . 'return ' . self::arrayToString($config) . ';';
-        if (file_put_contents(ROOT_PATH . 'app/config/config', $contents) === false) {
+        if (file_put_contents(ROOT_PATH . '../app/config/config', $contents) === false) {
             throw new \RuntimeException('Failed to write to config file');
         }
         if (function_exists('opcache_invalidate')) {
-            opcache_invalidate(ROOT_PATH . 'app/config/config', true);
+            opcache_invalidate(ROOT_PATH . '../app/config/config', true);
         }
         self::$_config_cache = $config;
     }

@@ -12,14 +12,14 @@ use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 
 class Routes {
     public static function process($config, $core) {
-        $fileLocator = new FileLocator(['app/config']);
+        $fileLocator = new FileLocator([$_SERVER['DOCUMENT_ROOT'] . '/app/config']);
         $requestContext = new RequestContext();
         $requestContext->fromRequest(Request::createFromGlobals());
     
         $router = new Router(
             new YamlFileLoader($fileLocator),
             'routes.yml',
-            $config ? ['cache_dir' => 'app/cache'] : [], // save in cache
+            $config ? ['cache_dir' => $_SERVER['DOCUMENT_ROOT'].'/app/cache'] : [],
             $requestContext
         );
     
