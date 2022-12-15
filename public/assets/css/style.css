@@ -80,7 +80,7 @@ input[type="color"] {
     background: var(--font-color-primary);
     border: 0;
     border-radius:8px;
-    margin: 1em 0;
+    padding: 1em .5em;
     transition: .2s;
 }
 
@@ -111,4 +111,20 @@ input.fancy_input:focus{
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+.modal-content{
+    background-color: var(--secondary-bg-color) !important;
+}
+
+.modal-title{
+    color: var(--font-color-dark) !important;
+}
+
+.modal-header .btn-close{
+    color: var(--font-color-dark) !important;
+}
+
+.modal-header{
+    border-bottom: unset !important;
 }
